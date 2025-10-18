@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Minimal Shop — Accessible Catalog</title>
+
+  <!-- Professional readable font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="#" class="logo" aria-label="Minimal Shop Home">Minimal Shop</a>
+        <p class="tagline">Curated essentials</p>
+      </div>
+
+      <div class="header-actions">
+        <!-- Cart toggle button with accessible badge -->
+        <button id="cart-toggle" class="cart-btn" aria-controls="cart-panel" aria-expanded="false" aria-label="Open shopping cart" title="Open cart">
+          <svg class="cart-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M7 4h-2l-1 2H2v2h1l2.6 9.59A2 2 0 0 0 7.56 18h9.88a2 2 0 0 0 1.96-1.41L22 8H7.42"></path>
+          </svg>
+          <span class="sr-only">Cart</span>
+          <span id="cart-badge" class="cart-badge" aria-live="polite" aria-atomic="true">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container main" role="main">
+    <section aria-labelledby="catalog-title" class="catalog">
+      <div class="catalog-header">
+        <h1 id="catalog-title">Product Catalog</h1>
+        <p class="catalog-sub">Select a quantity and add items to your cart.</p>
+      </div>
+
+      <div class="grid" id="product-grid">
+        <!-- Product 1 -->
+        <article class="card" data-id="P001" data-name="Classic Leather Wallet" data-price="39.99" data-desc="Full-grain leather wallet with 6 card slots." tabindex="0" aria-labelledby="p1-title" role="article">
+          <div class="card-body">
+            <h2 id="p1-title" class="card-title">Classic Leather Wallet <span class="product-id">P001</span></h2>
+            <p class="price" aria-label="Price">$39.99</p>
+            <p class="desc">Full-grain leather wallet with 6 card slots and coin pocket.</p>
+          </div>
+          <div class="card-actions">
+            <label for="qty-P001" class="visually-hidden">Quantity for Classic Leather Wallet</label>
+            <div class="qty-wrap">
+              <button class="qty-decr" aria-label="Decrease quantity" data-for="P001">−</button>
+              <input id="qty-P001" class="qty-input" inputmode="numeric" type="number" min="1" value="1" aria-label="Quantity" />
+              <button class="qty-incr" aria-label="Increase quantity" data-for="P001">+</button>
+            </div>
+            <button class="btn-add" type="button" aria-label="Add Classic Leather Wallet to cart">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="card" data-id="P002" data-name="Wireless Earbuds" data-price="79.50" data-desc="Noise-cancelling earbuds with 24h battery." tabindex="0" aria-labelledby="p2-title" role="article">
+          <div class="card-body">
+            <h2 id="p2-title" class="card-title">Wireless Earbuds <span class="product-id">P002</span></h2>
+            <p class="price" aria-label="Price">$79.50</p>
+            <p class="desc">Noise-cancelling earbuds featuring 24 hours battery and touch controls.</p>
+          </div>
+          <div class="card-actions">
+            <label for="qty-P002" class="visually-hidden">Quantity for Wireless Earbuds</label>
+            <div class="qty-wrap">
+              <button class="qty-decr" aria-label="Decrease quantity" data-for="P002">−</button>
+              <input id="qty-P002" class="qty-input" inputmode="numeric" type="number" min="1" value="1" aria-label="Quantity" />
+              <button class="qty-incr" aria-label="Increase quantity" data-for="P002">+</button>
+            </div>
+            <button class="btn-add" type="button" aria-label="Add Wireless Earbuds to cart">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="card" data-id="P003" data-name="Stainless Water Bottle" data-price="22.00" data-desc="Insulated 750ml bottle keeps drinks cold for 24h." tabindex="0" aria-labelledby="p3-title" role="article">
+          <div class="card-body">
+            <h2 id="p3-title" class="card-title">Stainless Water Bottle <span class="product-id">P003</span></h2>
+            <p class="price" aria-label="Price">$22.00</p>
+            <p class="desc">750ml insulated bottle keeps drinks cold for 24 hours and hot for 12.</p>
+          </div>
+          <div class="card-actions">
+            <label for="qty-P003" class="visually-hidden">Quantity for Stainless Water Bottle</label>
+            <div class="qty-wrap">
+              <button class="qty-decr" aria-label="Decrease quantity" data-for="P003">−</button>
+              <input id="qty-P003" class="qty-input" inputmode="numeric" type="number" min="1" value="1" aria-label="Quantity" />
+              <button class="qty-incr" aria-label="Increase quantity" data-for="P003">+</button>
+            </div>
+            <button class="btn-add" type="button" aria-label="Add Stainless Water Bottle to cart">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Product 4 -->
+        <article class="card" data-id="P004" data-name="Organic Cotton T-Shirt" data-price="29.99" data-desc="Soft, breathable organic cotton tee." tabindex="0" aria-labelledby="p4-title" role="article">
+          <div class="card-body">
+            <h2 id="p4-title" class="card-title">Organic Cotton T-Shirt <span class="product-id">P004</span></h2>
+            <p class="price" aria-label="Price">$29.99</p>
+            <p class="desc">Soft, breathable organic cotton tee available in multiple colors.</p>
+          </div>
+          <div class="card-actions">
+            <label for="qty-P004" class="visually-hidden">Quantity for Organic Cotton T-Shirt</label>
+            <div class="qty-wrap">
+              <button class="qty-decr" aria-label="Decrease quantity" data-for="P004">−</button>
+              <input id="qty-P004" class="qty-input" inputmode="numeric" type="number" min="1" value="1" aria-label="Quantity" />
+              <button class="qty-incr" aria-label="Increase quantity" data-for="P004">+</button>
+            </div>
+            <button class="btn-add" type="button" aria-label="Add Organic Cotton T-Shirt to cart">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Product 5 -->
+        <article class="card" data-id="P005" data-name="Portable Charger 10000mAh" data-price="34.75" data-desc="Compact power bank with fast charging support." tabindex="0" aria-labelledby="p5-title" role="article">
+          <div class="card-body">
+            <h2 id="p5-title" class="card-title">Portable Charger 10000mAh <span class="product-id">P005</span></h2>
+            <p class="price" aria-label="Price">$34.75</p>
+            <p class="desc">Compact 10000mAh power bank with fast-charge support and dual USB ports.</p>
+          </div>
+          <div class="card-actions">
+            <label for="qty-P005" class="visually-hidden">Quantity for Portable Charger 10000mAh</label>
+            <div class="qty-wrap">
+              <button class="qty-decr" aria-label="Decrease quantity" data-for="P005">−</button>
+              <input id="qty-P005" class="qty-input" inputmode="numeric" type="number" min="1" value="1" aria-label="Quantity" />
+              <button class="qty-incr" aria-label="Increase quantity" data-for="P005">+</button>
+            </div>
+            <button class="btn-add" type="button" aria-label="Add Portable Charger 10000mAh to cart">Add to Cart</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Overlay for accessibility and to capture outside clicks -->
+  <div id="cart-overlay" class="cart-overlay hidden" tabindex="-1" aria-hidden="true"></div>
+
+  <!-- Slide-out Cart Panel (initially hidden) -->
+  <aside id="cart-panel" class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true">
+    <header class="cart-header">
+      <h2 id="cart-title">Your Cart</h2>
+      <div class="cart-controls">
+        <button id="clear-cart" class="btn-clear" aria-label="Clear cart">Clear Cart</button>
+        <button id="close-cart" class="btn-close" aria-label="Close cart">Close</button>
+      </div>
+    </header>
+
+    <div class="cart-content">
+      <p id="empty-message" class="empty-message">Your cart is empty!</p>
+      <ul id="cart-list" class="cart-list" aria-live="polite" aria-relevant="additions removals text"></ul>
+    </div>
+
+    <footer class="cart-footer">
+      <div class="totals">
+        <div class="subtotal">
+          <span>Subtotal</span>
+          <strong id="subtotal-amt">$0.00</strong>
+        </div>
+        <div class="total">
+          <span>Total</span>
+          <strong id="total-amt">$0.00</strong>
+        </div>
+      </div>
+      <div class="cart-actions">
+        <button id="place-order" class="btn-order" disabled aria-label="Place order via WhatsApp">Place Order via WhatsApp</button>
+      </div>
+    </footer>
+  </aside>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Minimal Shop — Accessible demo</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
